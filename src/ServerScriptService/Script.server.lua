@@ -4,14 +4,13 @@
 local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
 
-local coinsFolder = Workspace.World.Coins
-local coins = coinsFolder:GetChildren()
+-- Getting all the coins in the world
+local coins = Workspace.World.Coins:GetChildren()
 
 local COOLDOWN = 10
 
 -- Defining the event handler
 local function onCoinTouched(otherPart, coin)
-	print(otherPart)
 	if coin:GetAttribute("Enabled") then
 		local character = otherPart.Parent
 		local player = Players:GetPlayerFromCharacter(character)
@@ -30,7 +29,6 @@ end
 
 -- Setting up event listeners
 for _, coin in coins do
-	--print(coin)
 	coin:SetAttribute("Enabled", true)
 	coin.Touched:Connect(function(otherPart)
 		onCoinTouched(otherPart, coin)
