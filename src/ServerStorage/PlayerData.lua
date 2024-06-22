@@ -1,10 +1,12 @@
 local PlayerData = {}
 PlayerData.COIN_KEY_NAME = "Coins"
+PlayerData.JUMP_KEY_NAME = "Jump Power"
 
 local playerData = {}
 
 local DEFAULT_PLAYER_DATA = {
-  [PlayerData.COIN_KEY_NAME] = 0
+  [PlayerData.COIN_KEY_NAME] = 0,
+  [PlayerData.JUMP_KEY_NAME] = 0
 }
 
 local function getData(player)
